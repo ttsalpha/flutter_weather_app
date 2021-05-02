@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter_weather_app/model/city.dart';
@@ -233,42 +234,218 @@ class WeatherItem extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Row(children: [
-                  Expanded(
-                    child: _WeatherItemDetails(
-                      title: 'Wind',
-                      value: "${weather.windSpeed.toStringAsFixed(2)} mph",
-                    ),
+                Container(
+                  padding: const EdgeInsets.all(15.0),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(0.3),
+                    borderRadius: BorderRadius.circular(15),
                   ),
-                  Expanded(
-                    child: _WeatherItemDetails(
-                      title: 'Air pressure',
-                      value: '${weather.airPressure.toStringAsFixed(2)} mBar',
-                    ),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Expanded(
+                            child: Text(
+                              'Temp min',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w700,
+                                shadows: shadows,
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: Text(
+                              'Temp max',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w700,
+                                shadows: shadows,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Expanded(
+                            child: Text(
+                              '${weather.minTemp.toStringAsFixed(2)} °C',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w900,
+                                fontSize: 20,
+                                shadows: shadows,
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: Text(
+                              '${weather.maxTemp.toStringAsFixed(2)} °C',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w900,
+                                fontSize: 20,
+                                shadows: shadows,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ],
                   ),
-                  Expanded(
-                    child: _WeatherItemDetails(
-                      title: 'Humidity',
-                      value: '${weather.humidity}%',
-                    ),
-                  ),
-                ]),
+                ),
                 const SizedBox(
-                  height: 15,
+                  height: 10,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    _WeatherItemDetails(
-                      title: 'Temp min',
-                      value: weather.minTemp.toStringAsFixed(2),
+                Container(
+                  padding: const EdgeInsets.all(15.0),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(0.3),
+                    border: Border.all(
+                      color: Colors.transparent,
+                      width: 1.0,
                     ),
-                    _WeatherItemDetails(
-                      title: 'Temp Max',
-                      value: weather.maxTemp.toStringAsFixed(2),
-                    ),
-                  ],
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Expanded(
+                            child: Text(
+                              'Humidity',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w700,
+                                shadows: shadows,
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: Text(
+                              'Visibility',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w700,
+                                shadows: shadows,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Expanded(
+                            child: Text(
+                              '${weather.humidity} %',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w900,
+                                fontSize: 20,
+                                shadows: shadows,
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: Text(
+                              '${weather.visibility.toStringAsFixed(2)} km',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w900,
+                                fontSize: 20,
+                                shadows: shadows,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Container(
+                  padding: const EdgeInsets.all(15.0),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(0.3),
+                    border: Border.all(
+                      color: Colors.transparent,
+                      width: 1.0,
+                    ),
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Expanded(
+                            child: Text(
+                              'Wind',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w700,
+                                shadows: shadows,
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: Text(
+                              'Air pressure',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w700,
+                                shadows: shadows,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Expanded(
+                            child: Text(
+                              '${weather.windSpeed.toStringAsFixed(2)} mph',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w900,
+                                fontSize: 20,
+                                shadows: shadows,
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: Text(
+                              '${weather.airPressure} mBar',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w900,
+                                fontSize: 20,
+                                shadows: shadows,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
+                )
               ],
             ),
           ),

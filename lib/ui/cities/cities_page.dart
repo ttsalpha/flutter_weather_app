@@ -5,7 +5,6 @@ import 'package:flutter_weather_app/data/repository/store_repository.dart';
 import 'package:flutter_weather_app/model/city.dart';
 import 'package:flutter_weather_app/ui/cities/add/add_city_page.dart';
 import 'package:flutter_weather_app/ui/cities/cities_bloc.dart';
-import 'package:flutter_weather_app/ui/common/header_widget.dart';
 import 'package:flutter_weather_app/ui/ui_constants.dart';
 
 class CitiesPage extends StatefulWidget {
@@ -78,8 +77,11 @@ class _CitiesPageState extends State<CitiesPage> {
       builder: (context, child) {
         return Scaffold(
           appBar: AppBar(
-            elevation: 0,
-            backgroundColor: Colors.white,
+            title: Text('List of cities',
+                style: TextStyle(
+                    color: Colors.black, fontWeight: FontWeight.w700)),
+            // elevation: 0,
+            backgroundColor: Colors.white70,
             iconTheme: IconThemeData(
               color: Colors.black,
             ),
@@ -98,9 +100,6 @@ class _CitiesPageState extends State<CitiesPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  HeaderWidget(
-                    title: 'List of cities',
-                  ),
                   Expanded(
                     child: bloc.cities.isEmpty
                         ? Center(
@@ -145,15 +144,22 @@ class CityItem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Container(
-        color: Colors.grey[200],
         padding: const EdgeInsets.all(20.0),
+        decoration: BoxDecoration(
+          color: Colors.grey[200],
+          border: Border.all(
+            color: Colors.transparent,
+            width: 2.0,
+          ),
+          borderRadius: BorderRadius.circular(15),
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Text(
               city.title,
               style: TextStyle(
-                fontWeight: FontWeight.w700,
+                fontWeight: FontWeight.w600,
                 fontSize: 20,
               ),
             ),

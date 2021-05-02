@@ -19,7 +19,7 @@ class City {
 
   factory City.fromJson(Map<String, dynamic> map) {
     final myWeathers = map['weathers'];
-    print(myWeathers);
+    // print(myWeathers);
     return City(
       id: map['woeid'],
       title: map['title'],

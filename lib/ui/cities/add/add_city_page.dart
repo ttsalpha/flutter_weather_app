@@ -4,7 +4,6 @@ import 'package:flutter_weather_app/data/repository/api_repository.dart';
 import 'package:flutter_weather_app/data/repository/store_repository.dart';
 import 'package:flutter_weather_app/model/city.dart';
 import 'package:flutter_weather_app/ui/cities/add/add_city_bloc.dart';
-import 'package:flutter_weather_app/ui/common/header_widget.dart';
 import 'package:flutter_weather_app/ui/common/loader_widget.dart';
 import 'package:flutter_weather_app/ui/ui_constants.dart';
 
@@ -39,8 +38,11 @@ class _AddCityPageState extends State<AddCityPage> {
       builder: (context, child) {
         return Scaffold(
           appBar: AppBar(
-            elevation: 0,
-            backgroundColor: Colors.white,
+            title: Text('Add city',
+                style: TextStyle(
+                    color: Colors.black, fontWeight: FontWeight.w700)),
+            // elevation: 0,
+            backgroundColor: Colors.white70,
             iconTheme: IconThemeData(
               color: Colors.black,
             ),
@@ -50,9 +52,6 @@ class _AddCityPageState extends State<AddCityPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
-                HeaderWidget(
-                  title: 'Add city',
-                ),
                 const SizedBox(
                   height: 15,
                 ),
