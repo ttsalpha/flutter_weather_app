@@ -52,9 +52,6 @@ class _AddCityPageState extends State<AddCityPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
-                const SizedBox(
-                  height: 15,
-                ),
                 ClipRRect(
                   borderRadius: BorderRadius.circular(15.0),
                   child: TextField(

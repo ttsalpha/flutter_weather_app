@@ -29,7 +29,7 @@ class WeatherDetailsWidget extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              height: 30,
+              height: 10,
             ),
             Expanded(
               child: ListView.builder(
@@ -39,11 +39,22 @@ class WeatherDetailsWidget extends StatelessWidget {
                   final weather = city.weathers[index];
                   return Padding(
                     padding: const EdgeInsets.all(20.0),
-                    child: Card(
+                    child: Container(
+                      padding: const EdgeInsets.all(15.0),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(15),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            blurRadius: 7,
+                          ),
+                        ],
+                      ),
                       child: Column(
                         children: [
                           Padding(
-                            padding: const EdgeInsets.all(20.0),
+                            padding: const EdgeInsets.all(10.0),
                             child: Row(
                               children: [
                                 Text(

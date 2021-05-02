@@ -5,6 +5,9 @@ import 'package:intl/intl.dart';
 import 'package:flutter_weather_app/model/city.dart';
 import 'package:flutter_weather_app/ui/home/weather_details_widget.dart';
 import 'package:flutter_weather_app/ui/ui_constants.dart';
+import 'package:flutter_weather_app/ui/cities/cities_page.dart';
+import 'package:flutter_weather_app/ui/cities/setting/setting_page.dart';
+import 'package:flutter_weather_app/ui/home_page.dart';
 
 DateFormat format = DateFormat('E, dd MMM yyyy');
 
@@ -90,7 +93,7 @@ class _WeathersWidgetState extends State<WeathersWidget> {
           top: 20,
           child: SafeArea(
             child: IconButton(
-              icon: Icon(Icons.add),
+              icon: Icon(Icons.add, color: Colors.black87),
               onPressed: widget.onTap,
             ),
           ),
@@ -100,13 +103,24 @@ class _WeathersWidgetState extends State<WeathersWidget> {
           top: 20,
           child: SafeArea(
             child: IconButton(
-              icon: Icon(Icons.settings),
-              onPressed: widget.onTap,
-            ),
+                icon: Icon(Icons.settings, color: Colors.black87),
+                onPressed: () {
+                  _navigateToSettingPage(context);
+                }),
           ),
         ),
       ],
     );
+  }
+
+  void _navigateToSettingPage(BuildContext context) {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => SettingPage()));
+  }
+
+  void _navigateToCitesPage(BuildContext context) {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => CitiesPage()));
   }
 }
 
