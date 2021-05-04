@@ -3,6 +3,7 @@ import 'package:intl/intl.dart';
 import 'package:flutter_weather_app/data/repository/api_repository.dart';
 import 'package:flutter_weather_app/data/repository/store_repository.dart';
 import 'package:flutter_weather_app/model/city.dart';
+import 'package:geolocator/geolocator.dart';
 
 class HomeBloc extends ChangeNotifier {
   List<City> cities = [];
@@ -14,7 +15,14 @@ class HomeBloc extends ChangeNotifier {
 
   HomeBloc({this.storage, this.apiService});
 
+  void getLocation() async {
+    Position position = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high);
+    print(position);
+  }
+
   void loadCities() async {
+    getLocation();
     final lastUpdate = await storage.getLastUpdate();
     final now = DateTime.now();
     final localCities = await storage.getCities();
