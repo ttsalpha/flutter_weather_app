@@ -1,4 +1,9 @@
+import 'dart:ffi';
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_weather_app/controller/controller.dart';
+import 'package:flutter_weather_app/model/infor_block.dart';
 
 void main() {
   runApp(MyApp());
@@ -63,6 +68,14 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+////////////////////////////////////// hàm test
+  @override
+  Void initState()  {
+    super.initState();
+    Controller.testLoop();
+  }
+
+///////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -99,7 +112,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Text(
               'You have pushed the button this many times:',
-            ),
+            ),  
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
