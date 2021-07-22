@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:flutter_weather_app/data/data_constants.dart';
 import 'package:flutter_weather_app/model/city.dart';
+import 'package:intl/intl.dart';
 
 final dayFormat = DateFormat('EEEE');
 

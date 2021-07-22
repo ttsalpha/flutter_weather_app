@@ -1,11 +1,12 @@
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_weather_app/data/repository/store_repository.dart';
 import 'package:flutter_weather_app/model/city.dart';
 import 'package:flutter_weather_app/ui/cities/add/add_city_page.dart';
 import 'package:flutter_weather_app/ui/cities/cities_bloc.dart';
+import 'package:flutter_weather_app/ui/home_page.dart';
 import 'package:flutter_weather_app/ui/ui_constants.dart';
+import 'package:provider/provider.dart';
 
 class CitiesPage extends StatefulWidget {
   @override
@@ -77,6 +78,11 @@ class _CitiesPageState extends State<CitiesPage> {
       builder: (context, child) {
         return Scaffold(
           appBar: AppBar(
+            // leading: IconButton(
+            //   icon: Icon(Icons.arrow_back_ios, color: Colors.black),
+            //   onPressed: () => Navigator.of(context)
+            //       .pop(MaterialPageRoute(builder: (_) => HomePage())),
+            // ),
             title: Text('List of cities',
                 style: TextStyle(
                     color: Colors.black, fontWeight: FontWeight.w700)),

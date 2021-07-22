@@ -1,11 +1,11 @@
+import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter_weather_app/data/data_constants.dart';
 import 'package:flutter_weather_app/data/repository/api_repository.dart';
 import 'package:flutter_weather_app/model/city.dart';
-import 'package:http/http.dart' as http;
 import 'package:flutter_weather_app/model/weather.dart';
-import 'dart:async';
+import 'package:http/http.dart' as http;
 
 class ApiImpl extends ApiRepository {
   @override

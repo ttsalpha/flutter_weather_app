@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:flutter_weather_app/data/repository/api_repository.dart';
 import 'package:flutter_weather_app/data/repository/store_repository.dart';
 import 'package:flutter_weather_app/model/city.dart';
 import 'package:flutter_weather_app/ui/cities/add/add_city_bloc.dart';
 import 'package:flutter_weather_app/ui/common/loader_widget.dart';
 import 'package:flutter_weather_app/ui/ui_constants.dart';
+import 'package:provider/provider.dart';
 
 class AddCityPage extends StatefulWidget {
   @override

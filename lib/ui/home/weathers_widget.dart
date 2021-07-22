@@ -1,11 +1,12 @@
 import 'dart:ui';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:flutter_weather_app/model/city.dart';
+import 'package:flutter_weather_app/ui/cities/setting/setting_page.dart';
 import 'package:flutter_weather_app/ui/home/weather_details_widget.dart';
 import 'package:flutter_weather_app/ui/ui_constants.dart';
-import 'package:flutter_weather_app/ui/cities/setting/setting_page.dart';
+import 'package:intl/intl.dart';
 
 DateFormat format = DateFormat('E, dd MMM yyyy');
 
