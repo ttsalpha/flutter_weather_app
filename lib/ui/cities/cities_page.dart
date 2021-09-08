@@ -4,7 +4,6 @@ import 'package:flutter_weather_app/data/repository/store_repository.dart';
 import 'package:flutter_weather_app/model/city.dart';
 import 'package:flutter_weather_app/ui/cities/add/add_city_page.dart';
 import 'package:flutter_weather_app/ui/cities/cities_bloc.dart';
-import 'package:flutter_weather_app/ui/home_page.dart';
 import 'package:flutter_weather_app/ui/ui_constants.dart';
 import 'package:provider/provider.dart';
 
