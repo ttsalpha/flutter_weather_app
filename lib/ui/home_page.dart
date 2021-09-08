@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:flutter_weather_app/data/repository/api_repository.dart';
 import 'package:flutter_weather_app/data/repository/store_repository.dart';
 import 'package:flutter_weather_app/ui/cities/cities_page.dart';
@@ -7,6 +6,7 @@ import 'package:flutter_weather_app/ui/common/loader_widget.dart';
 import 'package:flutter_weather_app/ui/home/empty_widget.dart';
 import 'package:flutter_weather_app/ui/home/weathers_widget.dart';
 import 'package:flutter_weather_app/ui/home_bloc.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
   @override

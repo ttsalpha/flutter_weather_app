@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:flutter_weather_app/data/repository/api_impl.dart';
 import 'package:flutter_weather_app/data/repository/api_repository.dart';
 import 'package:flutter_weather_app/data/repository/store_impl.dart';
 import 'package:flutter_weather_app/data/repository/store_repository.dart';
 import 'package:flutter_weather_app/ui/home_page.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(MyApp());
